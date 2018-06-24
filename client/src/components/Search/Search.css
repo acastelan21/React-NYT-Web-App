@@ -1,0 +1,9 @@
+.search-container {
+    background-color: #e6e9ed;
+    width: 960px;
+    margin: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 10px;
+}
