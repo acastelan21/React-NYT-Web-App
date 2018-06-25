@@ -16,12 +16,19 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes here
 app.use(routes);
 //Set up promises with mongoose 
-mongoose.Promise =global.Promise;
+mongoose.Promise = global.Promise;
 //connect to Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/nytreact"
-  
-);
+const db = process.env.MONGODB_URI || "mongodb://localhost/nyt-react";
+mongoose.connect(db, function(error) {
+  // Log any errors connecting with mongoose
+  if (error) {
+    console.error(error);
+  }
+  // Or log a success message
+  else {
+    console.log("mongoose connection is successful");
+  }
+});
 
 
 
