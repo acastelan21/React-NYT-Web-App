@@ -18,7 +18,7 @@ app.use(routes);
 //Set up promises with mongoose 
 mongoose.Promise = global.Promise;
 //connect to Mongo DB
-const db = process.env.MONGODB_URI || "mongodb://localhost/nyt-react";
+const db = process.env.MONGODB_URI || "mongodb://localhost:27017/nytreact";
 mongoose.connect(db, function(error) {
   // Log any errors connecting with mongoose
   if (error) {

@@ -6,6 +6,7 @@ import Results from "./components/Results";
 import Saved from "./components/Saved";
 
 class App extends Component {
+
   render() {
     return (
       <Wrapper>
