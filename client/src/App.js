@@ -6,6 +6,7 @@ import Results from "./components/Results";
 import Saved from "./components/Saved";
 import API from "./utils/API";
 class App extends Component {
+  
   state ={
     topic:"",
     startYear:"",
@@ -31,34 +32,45 @@ class App extends Component {
     event.preventDefault();
     
     
-    API.searchNYT(this.state.topic, this.state.startYear,this.state.endYear)
+    API.searchNYT(this.state.topic, this.state.startYear, this.state.endYear)
      
       .then((res)=>{
-        if (res){
-      console.log("working");
-        };
+        this.setState({articles:res.data.response.docs});
+        console.log(this.state.articles);
     });
+  }
+  renderArticles = () => {
+    return this.state.articles.map(article =>(
+      <Results 
+      _id={article._id}
+      key={article._id}
+      title={article.headline.main}
+      date={article.pub_date}
+      url={article.web_url}
+      />
+    ));
   }
   
   render() {
     return (
       <Wrapper>
-        <Header>   
+        <Header/>
 
-        </Header>
+        
         <Search
         handleTopicChange ={this.handleTopicChange}
         handleStartYearChange={this.handleStartYearChange}
         handleEndYearChange={this.handleEndYearChange}
         handleFormSubmit = {this.handleFormSubmit}
+        renderArticles = {this.renderArticles()}
         />
-        <Results>
+        <Results/>
 
-        </Results>
-        <Saved>
         
-        </Saved>
-      </Wrapper> 
+       <Saved/>
+
+      </Wrapper>
+      
     );
   }
 }

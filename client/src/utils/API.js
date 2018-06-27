@@ -1,5 +1,5 @@
 import axios from "axios"; 
-console.log("I imported")
+
 
 const API = {
     searchNYT : function(topic, startYear, endYear) {
