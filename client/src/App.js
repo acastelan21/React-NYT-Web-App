@@ -14,6 +14,7 @@ class App extends Component {
     saved:[]
   }
   handleTopicChange = (event) => {
+
     this.setState({ topic: event.target.value });
   }
 
@@ -29,23 +30,28 @@ class App extends Component {
   handleFormSubmit =(event)=> {
     event.preventDefault();
     
-    console.log("I am here");
-    API.searchNYT(this.state.topic, this.state.StartYear,this.state.endYear)
+    
+    API.searchNYT(this.state.topic, this.state.startYear,this.state.endYear)
+     
       .then((res)=>{
         if (res){
       console.log("working");
         };
     });
   }
+  
   render() {
     return (
       <Wrapper>
         <Header>   
 
         </Header>
-        <Search>
-        
-        </Search>
+        <Search
+        handleTopicChange ={this.handleTopicChange}
+        handleStartYearChange={this.handleStartYearChange}
+        handleEndYearChange={this.handleEndYearChange}
+        handleFormSubmit = {this.handleFormSubmit}
+        />
         <Results>
 
         </Results>
