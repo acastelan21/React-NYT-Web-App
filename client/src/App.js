@@ -62,9 +62,10 @@ class App extends Component {
         handleStartYearChange={this.handleStartYearChange}
         handleEndYearChange={this.handleEndYearChange}
         handleFormSubmit = {this.handleFormSubmit}
-        renderArticles = {this.renderArticles()}
+        
         />
-        <Results/>
+        <Results
+        renderArticles = {this.renderArticles()}/>
 
         
        <Saved/>

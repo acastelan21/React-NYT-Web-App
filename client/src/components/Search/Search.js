@@ -22,28 +22,16 @@ const Search = props =>
               </div>
               <button onClick={props.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
             </form>
-            
+           
+            </div>
+           
             </div>
    
-            <div className="row">
-      <div className="col-lg-12">
-        <div className="panel panel-primary">
-          <div className="panel-heading">
-            <h3 className="panel-title">
-              <strong>
-                <i className="fa fa-newspaper-o" aria-hidden="true"></i> Results
-              </strong>
-            </h3>
-          </div>
-          <div className="panel-body">
-            {props.renderArticles}
-          </div>
-        </div>
-      </div>
-    </div>
-    <br/><br/>
-  </div>
- 
+       
+  
+           
+         
+       
 
      
 
