@@ -14,9 +14,9 @@ class App extends Component {
     articles:[],
     saved:[]
   };
-  // componentDidMount(){
-  //   this.getSavedArticles()
-  // }
+   componentDidMount(){
+    this.getSavedArticles()
+  }
   getSavedArticles =()=> {
     API.getArticle().then((res)=>{
       this.setState({saved:res.data});
