@@ -55,9 +55,13 @@ class App extends Component {
   API.saveArticle(newSave)
   .then(this.getSavedArticles());
     
-    
+  
    
   }
+  handleDeleteButton = (id)=>{
+    API.deleteArticle(id)
+      .then(this.getSavedArticles());
+}
   
   render() {
     return (
