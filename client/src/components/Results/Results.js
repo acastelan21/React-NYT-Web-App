@@ -4,7 +4,7 @@ import "./Results.css";
 
 const Results = props =>
 
-  <div className="results-container">
+  <div className="results-container"> Results<hr/>
   {props.renderArticles}
     <li className="list-group-item">
       <h4>
@@ -15,7 +15,7 @@ const Results = props =>
           <a href={props.url} target="_blank">
             <button className="btn btn-default ">View Article</button>
           </a>
-          <button className="btn btn-primary" onClick={() => props.handleSaveButton(props._id)}>Save</button>
+          <button className="btn btn-primary" onClick={() => props.handleSavedButton(props._id)}>Save</button>
         </span>
       </h4>
       <p>Date Published: {props.date}</p>
