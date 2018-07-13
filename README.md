@@ -1,4 +1,4 @@
 # React NYT web app
 
 
-https://dashboard.heroku.com/apps/desolate-tundra-70466
+https://desolate-tundra-70466.herokuapp.com/
