@@ -12,7 +12,7 @@ module.exports = {
     },
     // this method handles adding new articles to the db
     insert: function(req, res) {
-      console.log("Adding saved artice to the db");
+      console.log("Adding saved article to the db");
       console.log("req.body: ", req.body);
       Article.create(req.body).then(function(doc) {
         res.json(doc);
